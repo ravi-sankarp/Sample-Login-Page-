@@ -1,18 +1,21 @@
 This is sample login page I built using the following technologies:
  
  Backend:
-&emsp;Node JS
-&emsp;Express JS
-&emsp;Mongo DB
-
+ <ul>
+<li>&emsp;Node JS</li>
+<li>&emsp;Express JS</li>
+<li>&emsp;Mongo DB</li>
+</ul>
 Frontend:
-&emsp;HTML
-&emsp;CSS
-&emsp;JavaScript
-
+<ul>
+<li>&emsp;HTML</li>
+<li>&emsp;CSS</li>
+<li>&emsp;JavaScript</li>
+</ul>
 Template Engine:
-&emsp;HandleBars
-
+<ul>
+<li>&emsp;HandleBars</li>
+</ul>
 Features:
 <ul>
 <li>Admin Page</li>
@@ -21,4 +24,5 @@ Features:
 <li>Proper management of Session and cookies</li>
 </ul>
 
-To run just clone the repository and <code> run npm install </code>
+To run just clone the repository and run <br>
+<code> npm install </code>
