@@ -1,0 +1,92 @@
+<section class="vh-100 gradient-custom">
+    <div class="container h-90">
+        <div class="row d-flex justify-content-center align-items-center h-90">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-5 mt-md-4 ">
+
+
+
+                            <h2 class="fw-bold mb-2 text-uppercase">add user</h2>
+                            <p class="text-white-50 mb-5">Add The Details</p>
+
+                            {{#if error}}
+                            <div>
+                                <label class="mb-4 h6 fw-bold" for="Incorrect password" style="color: red;">{{
+                                    error}}</label>
+                            </div>
+                            {{/if}}
+                            <form action="/addUser" method="post" id="form" novalidate="novalidate">
+
+                                <div class="row">
+
+                                    <div class="form-outline form-white mb-4 col-md-6">
+                                        <input placeholder="First name" name="firstName" type="text" id="firstName"
+                                            class="form-control form-control-lg" required />
+
+                                    </div>
+                                    <div class="form-outline form-white mb-4 col-md-6 ">
+                                        <input placeholder="Last Name" name="lastName" type="text" id="lastName"
+                                            class="form-control form-control-lg" required />
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-check form-check-inline form-white mb-4 d-flex gap-4 justify-content-start"
+                                    id="radioGroup">
+                                    <label class="me-4 h5 fw-bold">Gender: </label>
+                                    <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                                        value="female" checked />
+                                    <label class="form-check-label h5 me-4" for="femaleGender">Female</label>
+
+
+
+                                    <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                                        value="male" />
+                                    <label class="form-check-label h5 " for="maleGender">Male</label>
+                                </div>
+
+
+                                <div class="form-outline form-white mb-4">
+                                    <input placeholder="Email" name="email" type="email" id="email"
+                                        class="form-control form-control-lg" required />
+
+                                </div>
+
+
+
+
+                                <div class="form-outline form-white mb-4 ">
+                                    <input placeholder="Password" name="password" type="password" id="password"
+                                        class="form-control form-control-lg" required minlength="5" />
+
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input placeholder="Confirm Password" name="confirmPassword" type="password"
+                                        id="confirmPassword" class="form-control form-control-lg mt" required
+                                        minlength="5" />
+
+                                </div>
+
+
+                                <button class="btn btn-outline-light btn-lg px-5 " id="submit-btn" type="submit">
+                                    Add User</button>
+                            </form>
+
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,77 @@
+<div class="container bg-dark text-light p-5" style="height: 90vh;">
+    <div class="row h-100  ">
+        <div class="d-flex justify-content-between">
+            <div class="box-nav  d-flex justify-content-center align-items-center">
+                <a href="/addUser" class="btn btn-success" >
+                    <span class="text-gradient  text-white">New User <i class="fas fa-user"></i></span>
+                </a>
+            </div>
+            <div>
+                <input type="search" placeholder="Search..." class="form-control search-input" data-table="customers-list" />
+            </div>
+        </div>
+        <table class="table table-hover table-striped table-dark table-bordered border-dark customers-list">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody class="table-light">
+                {{#each resultData}}
+                <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.gender}}</td>
+                    <td>
+                        <a href="/updateUser/{{this.id}}" class="btn btn btn-primary">
+                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                        </a>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal{{@index}}">
+                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal{{@index}}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel{{@index}}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel{{@index}}">Confirm your choice
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete {{this.name}}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">No</button>
+                                        <a class="btn border-shadow delete " href="/deleteUser/{{this.id}}">
+
+                                            <button type="button" class="btn btn-danger">Yes</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        <div class=" w-100 justify-content-center d-grid gap-2">
+            <a href="/logout"><button class="btn  btn-lg btn-danger px-5 mt-5 text-white">Logout</button></a>
+        </div>
+    </div>
+</div>
